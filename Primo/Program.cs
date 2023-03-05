@@ -4,7 +4,6 @@ internal class Program
     private static void Main(string[] args)
     {
         double numero;
-
         int count = 0;
 
         Console.WriteLine("Digite um número");
