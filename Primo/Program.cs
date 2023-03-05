@@ -1,36 +1,61 @@
-﻿//primo
-internal class Program
+﻿internal class Program
 {
     private static void Main(string[] args)
     {
-        double numero;
-        int count = 0;
+        int numero, cont;
+        bool verifica;
 
-        Console.WriteLine("Digite um número");
-        numero = int.Parse(Console.ReadLine());
-
-        if (numero == 1)
+        void Entrada()
         {
-            Console.WriteLine("É primo");
+            Console.WriteLine("DIGITE UM NÚMERO");
+            numero = int.Parse(Console.ReadLine());
         }
-        else
+        void iteracao()
         {
-            for (int divisor = 1; divisor <= numero; divisor++)
+            cont = 0;
+            int i = 1;
+            while ((cont <= 2) && (i <= numero))
             {
-                if (numero % divisor == 0)
+                if (numero % i == 0)
                 {
-                    count++;
+                    cont++;
                 }
+
+                i++;
+            }
+
+            Verifica();
+        }
+
+        void Verifica()
+        {
+            verifica = false;
+
+            if (cont == 2)
+            {
+                verifica = true;
             }
         }
 
-        if(count == 2)
+        Entrada();
+
+        if (numero == 1)
         {
-            Console.WriteLine("O número é PRIMO ");
+            Console.WriteLine("O NÚMERO É PRIMO !!!");
         }
         else
         {
-            Console.WriteLine("O número NÃO é PRIMO");
+            iteracao();
+
+            if (verifica)
+            {
+                Console.WriteLine("O NÚMERO É PRIMO !!!");
+            }
+            else
+            {
+                Console.WriteLine("O NÚMERO NÃO É PRIMO !!!");
+            }
         }
+
     }
 }
